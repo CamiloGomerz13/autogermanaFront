@@ -1,0 +1,28 @@
+<div>
+    <div class="AddButton">
+        <Button class="ButtonToAdd" routerLink="/">Volver</Button>
+        <Button class="ButtonToAdd" (click)="showPopup(true)">Añadir Producto</Button>
+    </div>
+
+    <dx-data-grid [dataSource]="dataGrid" [showBorders]="true">
+        <dxi-column dataField="nombre" caption="nombre" alignment="center">
+        </dxi-column>
+        <dxi-column dataField="precio_venta" caption="precio_venta" alignment="center">
+        </dxi-column>
+        <dxi-column dataField="stock" caption="stock" alignment="center">
+        </dxi-column>
+        <dxi-column dataField="codigo" caption="codigo" alignment="center">
+        </dxi-column>
+        <dxi-column dataField="estado" caption="estado" alignment="center">
+        </dxi-column>
+        <dxi-column  dataField="" caption="Acciones" type="buttons" width="auto" alignment="center">
+            <dxi-button  icon="edit" hint="Editar" [onClick]="editarProducto"></dxi-button>
+            <dxi-button icon="pinleft" hint="Cambiar estado" [onClick]="updateState"></dxi-button>
+        </dxi-column>
+    </dx-data-grid>
+</div>
+
+<dx-popup [width]="500" [height]="400" [showTitle]="true" title="Formulario de Producto" [dragEnabled]="false"
+    [hideOnOutsideClick]="true" [showCloseButton]="false" [(visible)]="popupVisible">
+    <app-formulario-producto (popupCloser)="showPopup($event)" [productoInput]="dataToChild"></app-formulario-producto>
+</dx-popup>

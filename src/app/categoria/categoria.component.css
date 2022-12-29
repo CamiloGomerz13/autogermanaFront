@@ -1,0 +1,17 @@
+.AddButton{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+  }
+.ButtonToAdd{
+    border-radius: 25px;
+    border-width: 1px;
+    border-color: black;
+    background: linear-gradient(45deg, #d1cffb, #1b6fed);
+    font-weight: bold;
+}
+.ButtonToAdd:hover{
+    border-width: 2px;
+    background: linear-gradient(45deg, #1b6fed, #d1cffb);
+}
